@@ -5,6 +5,8 @@ import { Box } from '@mui/material';
 import SearchBar from './SearchBar';
 import SearchType from './SearchType';
 import { API_ENDPOINTS, SearchingType } from '../../../env';
+import RepoList from '../repositories/RepoList';
+import UserList from '../users/UserList';
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,10 +16,7 @@ const Search = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-      console.log(`123Search Type: ${searchType}, Query: ${searchQuery}`);
-
     const handler = setTimeout(() => {
-        console.log(`Search Type: ${searchType}, Query: ${searchQuery}`);
       if (searchQuery) {
         fetchData();
       }
@@ -39,7 +38,6 @@ const Search = () => {
         setIsLoading(false);
       }
     };
-  
     return () => {
         clearTimeout(handler);
     };
@@ -51,25 +49,30 @@ const Search = () => {
 
   function handleSearchTypeChange(newSearchType: SearchingType): void {
     setSearchType(newSearchType);
+  }
+
+  function clearSearch(): void {
+    setSearchQuery('');
   }  
 
 
   return (
     <Box>
       <SearchType searchType={searchType} handleSearchTypeChange={handleSearchTypeChange} />
-      <SearchBar query={searchQuery} handleSearch={handleSearch} />
+      <SearchBar query={searchQuery} handleSearch={handleSearch} clearSearch={clearSearch} />
       {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       {data && (
         <div>
           {/* Display your data here. The data structure will depend on the searchType */}
           {searchType === 'users' ? (
-            data.items.map((user: any) => <div key={user.id}>{user.login}</div>)
+            <UserList users={data.items}/>
           ) : (
-            data.items.map((repo: any) => <div key={repo.id}>{repo.name}</div>)
+            <RepoList repos={data.items}/>
           )}
         </div>
       )}
+
     </Box>
   );
 };
