@@ -1,0 +1,4 @@
+interface CustomSliderProps {
+    warning: boolean;
+}
+  
