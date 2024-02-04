@@ -1,6 +1,8 @@
 import React from 'react';
-import RepoCard from './RepoCard';
+
 import Box from '@mui/material/Box';
+
+import RepoCard from '@/components/repositories/RepoCard';
 
 const RepoList: React.FC<any> = ({ repos }) => {
     return (

@@ -1,7 +1,6 @@
 import React from 'react';
-import Skeleton from '@mui/material/Skeleton';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+
+import {Skeleton, Box, Grid} from '@mui/material';
 
 const ItemsSkeletonComponent = () => {
   return (

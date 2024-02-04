@@ -2,11 +2,13 @@
 
 import { useEffect, useCallback } from 'react';
 import { observer } from 'mobx-react-lite';
-import { Box } from '@mui/material';
 import debounce from 'lodash/debounce';
-import SearchBar from './SearchBar';
-import SearchType from './SearchType';
+
+import { Box } from '@mui/material';
+
 import { searchStore } from '@/store/SearchStore';
+import SearchBar from '@/components/search/SearchBar';
+import SearchType from '@/components/search/SearchType';
 
 const Search = observer(() => {
 

@@ -3,6 +3,8 @@
 import React, { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { toJS } from 'mobx';
+
 import Container from '@mui/material/Container';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
@@ -10,13 +12,11 @@ import Grid from '@mui/material/Grid';
 
 import UserList from '@/components/users/UserList';
 import RepoList from '@/components/repositories/RepoList';
-import ItemsSkeletonComponent from '../ItemsSkeletonComponent';
+import ItemsSkeletonComponent from '@/components/ItemsSkeletonComponent';
 import { SearchResultMapType, SearchTypeEnum, searchStore } from '@/store/SearchStore';
-import { toJS } from 'mobx';
 
 const SearchResult = observer(() => {
   const items = getItems(searchStore.searchResultMap, searchStore.searchType);
-
 
   function getItems(result: SearchResultMapType, type: SearchTypeEnum) {
     return toJS(result[type])?.items;

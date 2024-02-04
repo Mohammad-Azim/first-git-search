@@ -1,6 +1,8 @@
 import React from 'react';
+
 import Box from '@mui/material/Box';
-import UserCard from './UserCard';
+
+import UserCard from '@/components/users/UserCard';
 
 const UserList: React.FC<any> = ({ users }) => {
     return (

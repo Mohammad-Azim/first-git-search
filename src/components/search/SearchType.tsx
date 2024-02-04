@@ -1,6 +1,8 @@
-import { FormControl, RadioGroup, FormControlLabel, Radio } from '@mui/material';
-import { SearchTypeEnum, searchStore } from '@/store/SearchStore';
 import { observer } from 'mobx-react-lite';
+
+import { FormControl, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+
+import { SearchTypeEnum, searchStore } from '@/store/SearchStore';
 
 const SearchType: React.FC = observer(() => {
 

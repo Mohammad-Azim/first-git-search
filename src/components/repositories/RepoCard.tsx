@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import { Card, CardContent, Typography, Chip, Avatar, CardHeader } from '@mui/material';
-import ForkedBy from './ForkedBy';
+
+import ForkedBy from '@/components/repositories/ForkedBy';
 
 interface Repo {
     id: number;

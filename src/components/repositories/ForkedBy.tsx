@@ -1,4 +1,5 @@
 import { SearchUsersType } from "@/store/SearchStore";
+
 import { Avatar, Box, Link, Modal, Typography } from "@mui/material"
 
 interface ForkedByProps {

@@ -1,4 +1,4 @@
-import { TextField, Button, Box } from '@mui/material';
+import { TextField, Box } from '@mui/material';
 
 interface SearchBarProps {
   query: string;
