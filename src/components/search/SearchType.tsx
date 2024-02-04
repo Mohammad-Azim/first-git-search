@@ -1,7 +1,8 @@
 import { FormControl, RadioGroup, FormControlLabel, Radio } from '@mui/material';
 import { SearchTypeEnum, searchStore } from '@/store/SearchStore';
+import { observer } from 'mobx-react-lite';
 
-const SearchType: React.FC = () => {
+const SearchType: React.FC = observer(() => {
 
   function handleSearchTypeChange(newType: SearchTypeEnum): void {
     searchStore.setType(newType);
@@ -21,6 +22,6 @@ const SearchType: React.FC = () => {
       </RadioGroup>
     </FormControl>
   );
-};
+});
 
 export default SearchType;
