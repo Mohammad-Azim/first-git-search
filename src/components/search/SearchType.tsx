@@ -1,23 +1,23 @@
 import { FormControl, RadioGroup, FormControlLabel, Radio } from '@mui/material';
-import { SearchingType } from '../../../env';
+import { SearchTypeEnum, searchStore } from '@/store/SearchStore';
 
-interface SearchTypeProps {
-  searchType: string;
-  handleSearchTypeChange: (type: SearchingType) => void;
-}
+const SearchType: React.FC = () => {
 
-const SearchType: React.FC<SearchTypeProps> = ({ searchType, handleSearchTypeChange }) => {
+  function handleSearchTypeChange(newType: SearchTypeEnum): void {
+    searchStore.setType(newType);
+  }
+  
   return (
     <FormControl component="fieldset">
       <RadioGroup
         row
         aria-label="search-type"
         name="search-type"
-        value={searchType}
-        onChange={(e) => handleSearchTypeChange(e.target.value as SearchingType)}
+        value={searchStore.searchType}
+        onChange={(e) => handleSearchTypeChange(e.target.value as SearchTypeEnum)}
       >
-        <FormControlLabel value="repositories" control={<Radio />} label="Repositories" />
-        <FormControlLabel value="users" control={<Radio />} label="Users" />
+        <FormControlLabel value={SearchTypeEnum.repositories} control={<Radio/>} label="Repositories" />
+        <FormControlLabel value={SearchTypeEnum.users} control={<Radio/>} label="Users" />
       </RadioGroup>
     </FormControl>
   );
