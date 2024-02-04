@@ -39,3 +39,27 @@ Please follow the steps below to get the project set up:
 2. Install the specified **Node.js** version using nvm by running: `nvm install <VERSION>`, where `<VERSION>` corresponds to the version specified in the `.nvmrc` file.
 
 With these instructions, you should have everything ready to run the application and explore its functionality.
+
+## Search Queries
+
+### Search Queries for Repositories:
+
+1. Search repositories by keyword:
+   `react`
+
+2. Search repositories by keyword within a specific language:
+   `react language:javascript`
+
+3. Search repositories by keyword with the specified topic:
+   `react topic:ui-components`
+
+### Search Queries for Users:
+
+1. Search users by username:
+   `user:octocat`
+
+2. Search users by location:
+   `location:San Francisco`
+
+3. Search users by the number of followers:
+   `followers:>=1000`
