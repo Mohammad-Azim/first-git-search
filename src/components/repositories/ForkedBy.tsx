@@ -1,8 +1,9 @@
+import { SearchUsersType } from "@/store/SearchStore";
 import { Avatar, Box, Link, Modal, Typography } from "@mui/material"
 
 interface ForkedByProps {
     open: boolean;
-    forkers: [];
+    forkers: SearchUsersType["items"][0][];
     handleClose: () => void;
 }
 
@@ -31,7 +32,7 @@ const ForkedBy:React.FC<ForkedByProps> = ({ open, forkers, handleClose })=> {
                 Forked By
             </Typography>
             <Box id="forkers-modal-description" sx={{ mt: 2 }}>
-                {forkers.map((forker: any) => (
+                {forkers?.map((forker: any) => (
                     <Box key={forker.owner.login} sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
                         <Avatar src={forker.owner.avatar_url} alt={forker.owner.login} />
                         <Link href={forker.owner.html_url} target="_blank" rel="noopener">
