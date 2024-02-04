@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GitHub Search Challenge
+
+## Overview
+
+This repository contains a solution for the GitHub Search code challenge.
+
+## Important Notes
+
+- The GitHub API has a limit on how many times it can be used for free. To avoid problems, please use your GitHub Token with this app. You can learn more about these limits in the GitHub documentation. [official documentation](https://docs.github.com/en/rest/overview/resources-in-the-rest-api?apiVersion=2022-11-28#exceeding-the-rate-limit).
+
+## Technology Stack
+
+The application was developed using the following technologies:
+
+- TypeScript
+- Next.js 14
+- Mobx
+- Material UI
 
 ## Getting Started
 
-First, run the development server:
+Before running the application, please ensure that you have the following prerequisites installed:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Node.js** (The required version is specified in the `.nvmrc` file).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Useful Commands
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To work with the application, use the following commands:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Run the application in the local environment: `npm run dev`
+- Run unit tests: `npm run test`
+- Run unit tests in watch mode: `npm run test:watch`
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+Please follow the steps below to get the project set up:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Install **nvm** by following the instructions provided [here](https://github.com/nvm-sh/nvm#installation-and-update).
+2. Install the specified **Node.js** version using nvm by running: `nvm install <VERSION>`, where `<VERSION>` corresponds to the version specified in the `.nvmrc` file.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+With these instructions, you should have everything ready to run the application and explore its functionality.
